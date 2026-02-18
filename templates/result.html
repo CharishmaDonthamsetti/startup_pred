@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="result-page">
+
+    <div class="result-container">
+
+        <!-- Card Wrapper -->
+        <div class="result-card">
+
+            <h1>Prediction Result</h1>
+
+            {% if "Acquired" in result %}
+                <div class="success">
+                    <div class="icon">✅</div>
+                    <div class="text">{{ result }}</div>
+                    <div class="details">
+                        The model predicts that this startup shows characteristics
+                        commonly associated with successful acquisitions.
+                    </div>
+                </div>
+
+            {% elif "Closed" in result %}
+                <div class="failure">
+                    <div class="icon">❌</div>
+                    <div class="text">{{ result }}</div>
+                    <div class="details">
+                        Based on the provided inputs, the startup exhibits patterns
+                        similar to companies that typically cease operations.
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="error">
+                    <div class="icon">⚠️</div>
+                    <div class="text">{{ result }}</div>
+                    <div class="details">
+                        Something unexpected occurred during prediction.
+                        Please verify your input values.
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Button -->
+            <a href="/" class="back-btn">← Try Another Prediction</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

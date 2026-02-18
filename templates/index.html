@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Startup Success Prediction</h1>
+
+        <form action="/predict" method="post">
+
+            <div class="grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="column">
+                    <label>Age First Funding Year</label>
+                    <input type="number" step="any" name="age_first_funding_year" required>
+
+                    <label>Age Last Funding Year</label>
+                    <input type="number" step="any" name="age_last_funding_year" required>
+
+                    <label>Age First Milestone Year</label>
+                    <input type="number" step="any" name="age_first_milestone_year" required>
+
+                    <label>Age Last Milestone Year</label>
+                    <input type="number" step="any" name="age_last_milestone_year" required>
+
+                    <label>Relationships</label>
+                    <input type="number" step="any" name="relationships" required>
+
+                    <label>Funding Rounds</label>
+                    <input type="number" step="any" name="funding_rounds" required>
+
+                    <label>Funding Total USD</label>
+                    <input type="number" step="any" name="funding_total_usd" required>
+
+                    <label>Milestones</label>
+                    <input type="number" step="any" name="milestones" required>
+
+                    <label>Average Participants</label>
+                    <input type="number" step="any" name="avg_participants" required>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="column">
+                    <label>Latitude</label>
+                    <input type="number" step="any" name="latitude" required>
+
+                    <label>Longitude</label>
+                    <input type="number" step="any" name="longitude" required>
+
+                    <label>Founded Year</label>
+                    <input type="number" step="any" name="founded_year" required>
+
+                    <div class="checkbox-group">
+                        <h3>Startup Location</h3>
+
+                        <label><input type="checkbox" name="is_CA"> California</label>
+                        <label><input type="checkbox" name="is_NY"> New York</label>
+                        <label><input type="checkbox" name="is_MA"> Massachusetts</label>
+                        <label><input type="checkbox" name="is_TX"> Texas</label>
+                        <label><input type="checkbox" name="is_otherstate"> Other State</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <h3>Investment & Rounds</h3>
+
+                        <label><input type="checkbox" name="has_VC"> Has VC</label>
+                        <label><input type="checkbox" name="has_angel"> Has Angel</label>
+                        <label><input type="checkbox" name="has_roundA"> Has Round A</label>
+                        <label><input type="checkbox" name="has_roundB"> Has Round B</label>
+                        <label><input type="checkbox" name="has_roundC"> Has Round C</label>
+                        <label><input type="checkbox" name="has_roundD"> Has Round D</label>
+                        <label><input type="checkbox" name="is_top500"> Top 500 Startup</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit">Predict</button>
+
+        </form>
+    </div>
+</body>
+</html>
